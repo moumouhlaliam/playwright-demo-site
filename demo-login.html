@@ -1,29 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Demo Login</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header class="top-bar">
-    <img src="assets/images/playwright.png" alt="Playwright">
-    <img src="assets/images/docker.png" alt="Docker">
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="brand">
+        <img src="assets/images/playwright.png" alt="Playwright logo">
+        <img src="assets/images/docker.png" alt="Docker logo">
+        <div class="brand-title">
+          <strong>Demo Login</strong>
+          <span>Testable page</span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a class="active" href="demo-login.html">Demo Login</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+    </nav>
   </header>
 
   <main>
-    <h2>Demo Login</h2>
+    <section class="card">
+      <h1>Demo Login</h1>
+      <p>Use this page to practice Playwright selectors and assertions.</p>
 
-    <input id="email" placeholder="Email">
-    <input id="password" type="password" placeholder="Password">
-    <button id="loginBtn">Login</button>
+      <div class="form">
+        <input class="input" id="email" placeholder="Email" />
+        <input class="input" id="password" type="password" placeholder="Password" />
+        <button class="button" id="loginBtn">Login</button>
+      </div>
 
-    <p id="loginMessage"></p>
+      <p class="message" id="loginMessage"></p>
+    </section>
+
+    <script>
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+      const loginBtn = document.getElementById('loginBtn');
+      const loginMessage = document.getElementById('loginMessage');
+
+      loginBtn.addEventListener('click', () => {
+        const e = email.value.trim();
+        const p = password.value.trim();
+
+        if (!e || !p) {
+          loginMessage.textContent = 'Please fill in all fields.';
+          return;
+        }
+
+        if (e === 'qa@test.com' && p === 'Password123') {
+          loginMessage.textContent = 'Login successful!';
+        } else {
+          loginMessage.textContent = 'Invalid credentials.';
+        }
+      });
+    </script>
   </main>
 
-  <footer class="footer">
-    E2E with Playwright
+  <footer class="site-footer">
+    &lt;&lt; E2E Playwright &gt;&gt;
   </footer>
 
 </body>
