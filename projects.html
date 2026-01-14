@@ -1,50 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Projects | QA Portfolio</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta charset="UTF-8" />
+  <title>Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="container">
-  <div class="nav">
-    <div class="brand">QA Portfolio</div>
-    <div>
+
+  <!-- HEADER + NAVBAR -->
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="brand">
+        <img src="assets/images/playwright.png" alt="Playwright logo">
+        <img src="assets/images/docker.png" alt="Docker logo">
+        <div class="brand-title">
+          <strong>Project</strong>
+          <span>Test scenarios overview</span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar">
       <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="demo-login.html">Demo App</a>
-      <a href="about.html">About</a>
-    </div>
-  </div>
+      <a href="demo-login.html">Demo Login</a>
+      <a href="demo-form.html">Demo Form</a>
+      <a class="active" href="project.html">Project</a>
+    </nav>
+  </header>
 
-  <div class="hero">
-    <h1>Projects</h1>
-    <p>What I built and how I test it. Replace placeholders with your repo links.</p>
-  </div>
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="card">
+      <h1>Project Overview</h1>
+      <p>This page describes the E2E testing project structure.</p>
 
-  <div class="grid">
-    <div class="card">
-      <h2>Playwright E2E (Docker + CI)</h2>
-      <p>
-        End-to-end tests executed in Docker and automated with GitHub Actions.
-        Produces Playwright HTML reports.
-      </p>
-      <p class="small">Repo: add your GitHub link here</p>
-    </div>
+      <div class="grid">
+        <div class="kpi">
+          <h3>Login tests</h3>
+          <p>Positive and negative authentication scenarios.</p>
+        </div>
 
-    <div class="card">
-      <h2>Demo Web App (GitHub Pages)</h2>
-      <p>
-        Small web app designed for automation: login, form, validations, UI states.
-      </p>
-      <a class="btn" href="demo-login.html">Open Demo</a>
-    </div>
-  </div>
+        <div class="kpi">
+          <h3>Form tests</h3>
+          <p>Required fields, email validation, success messages.</p>
+        </div>
 
- <footer class="site-footer">
-  &lt;&lt; E2E Playwright &gt;&gt;
-</footer>
+        <div class="kpi">
+          <h3>Navigation tests</h3>
+          <p>Verify navbar links and page transitions.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    &lt;&lt; E2E Playwright &gt;&gt;
+  </footer>
 
 </body>
 </html>
