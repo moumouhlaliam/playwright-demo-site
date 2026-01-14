@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Playwright Demo Site</title>
+</head>
+<body>
+  <h1>Welcome to My Playwright Demo Site</h1>
+
+  <form id="login-form">
+    <label>Email</label><br>
+    <input type="email" id="email" required><br><br>
+
+    <label>Password</label><br>
+    <input type="password" id="password" required><br><br>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("message").innerText = "Login successful!";
+    });
+  </script>
+</body>
+</html>
