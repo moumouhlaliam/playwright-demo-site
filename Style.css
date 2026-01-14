@@ -167,10 +167,17 @@ main {
 }
 
 /* ============ FOOTER (7 cm, grenadine, grey text) ============ */
+/* ============ FOOTER (7 cm – GRENADINE) ============ */
 .site-footer {
-  height: 7cm;               /* demandé */
-  background: #e11d48;       /* grenadine */
-  color: #bdbdbd;            /* gris */
+  height: 7cm;
+  background-color: #8B0000;   /* grenadine UNIQUEMENT */
+  color: #d1d5db;              /* texte gris */
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
