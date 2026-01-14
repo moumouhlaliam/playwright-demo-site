@@ -1,40 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>About | QA Portfolio</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta charset="UTF-8" />
+  <title>About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="container">
-  <div class="nav">
-    <div class="brand">QA Portfolio</div>
-    <div>
+
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="brand">
+        <img src="assets/images/playwright.png" alt="Playwright logo">
+        <img src="assets/images/docker.png" alt="Docker logo">
+        <div class="brand-title">
+          <strong>About</strong>
+          <span>Why this site exists</span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar">
       <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="demo-login.html">Demo App</a>
-      <a href="about.html">About</a>
-    </div>
-  </div>
+      <a href="demo-login.html">Demo Login</a>
+      <a href="tools.html">Tools</a>
+      <a class="active" href="about.html">About</a>
+    </nav>
+  </header>
 
-  <div class="hero">
-    <h1>About</h1>
-    <p>QA Automation Engineer — Playwright, Docker, CI/CD, test reporting.</p>
-  </div>
+  <main>
+    <section class="card">
+      <h1>About this demo</h1>
+      <p>
+        This website is intentionally simple and stable to help you practice:
+      </p>
+      <ul>
+        <li>Selectors (id, text, role)</li>
+        <li>Assertions (text, visibility)</li>
+        <li>Negative scenarios</li>
+        <li>CI-ready structure</li>
+      </ul>
+    </section>
+  </main>
 
-  <div class="grid">
-    <div class="card">
-      <h2>What this site demonstrates</h2>
-      <p>Public web app + deterministic flows + validations designed for end-to-end automation.</p>
-    </div>
-    <div class="card">
-      <h2>Next improvements</h2>
-      <p>Add API mock, visual regression screenshots, and publish Playwright HTML report.</p>
-    </div>
-  </div>
+  <footer class="site-footer">
+    &lt;&lt; E2E Playwright &gt;&gt;
+  </footer>
 
-  <div class="footer">Add your LinkedIn + GitHub links here.</div>
-</div>
 </body>
 </html>
