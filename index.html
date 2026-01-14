@@ -1,60 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>QA Portfolio | Playwright + Docker</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta charset="UTF-8" />
+  <title>Playwright Demo Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="nav">
-      <div class="brand">QA Portfolio</div>
-      <div>
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="demo-login.html">Demo App</a>
-        <a href="about.html">About</a>
-      </div>
-    </div>
 
-    <div class="hero">
-      <h1>Playwright + Docker E2E Portfolio</h1>
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Playwright Demo Site</h1>
       <p>
-        Public demo web app hosted on GitHub Pages, tested end-to-end with Playwright.
-        CI runs tests in Docker and publishes reports.
+        A simple demo website built to practice <strong>E2E testing</strong>
+        with Playwright and Docker.
       </p>
-      <div style="margin-top:12px">
-        <span class="badge">Playwright</span>
-        <span class="badge">Docker</span>
-        <span class="badge">GitHub Actions</span>
-        <span class="badge">HTML Report</span>
-      </div>
-      <a class="btn" href="projects.html">See projects</a>
+      <a href="demo-login.html" class="btn">Try Demo Login</a>
     </div>
 
-    <div class="grid">
-      <div class="card">
-        <h2>✅ Demo App for E2E Testing</h2>
-        <p>Login flow + form validation + UI assertions. Built to demonstrate robust automated testing.</p>
-        <a class="btn" href="demo-login.html">Open demo</a>
-      </div>
-      <div class="card">
-        <h2>📄 Test Evidence</h2>
-        <p>Add your Playwright HTML report link here once CI publishes it (e.g., /report/).</p>
-        <p class="small">Tip: include a CI badge + latest report link.</p>
-      </div>
-      <div class="card">
-        <h2>🧰 Skills</h2>
-        <p>Selectors, assertions, page objects, Dockerized runs, CI pipelines, test reporting.</p>
-      </div>
-      <div class="card">
-        <h2>🎯 Goal</h2>
-        <p>Show recruiters a complete QA automation workflow: app + E2E + CI + report.</p>
-      </div>
+    <div class="hero-logos">
+      <img src="assets/images/playwright.png" alt="Playwright logo">
+      <img src="assets/images/docker.png" alt="Docker logo">
+    </div>
+  </header>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="card">
+      <h3>🎭 Playwright</h3>
+      <p>End-to-end testing for modern web apps with powerful selectors.</p>
     </div>
 
-    <div class="footer">© 2026 — Built for QA Automation portfolio</div>
-  </div>
+    <div class="card">
+      <h3>🐳 Docker</h3>
+      <p>Run tests consistently in CI/CD and local environments.</p>
+    </div>
+
+    <div class="card">
+      <h3>⚙️ Automation</h3>
+      <p>Designed for QA Engineers to practice automation scenarios.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 – Playwright Demo Site</p>
+  </footer>
+
 </body>
 </html>
