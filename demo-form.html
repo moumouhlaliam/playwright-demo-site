@@ -1,65 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Demo Form | QA Portfolio</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta charset="UTF-8" />
+  <title>Demo Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="container">
-  <div class="nav">
-    <div class="brand">QA Portfolio</div>
-    <div>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="demo-login.html">Demo Login</a>
-      <a href="demo-form.html">Demo Form</a>
-      <a href="about.html">About</a>
-    </div>
-  </div>
 
-  <div class="hero">
-    <h1>Demo Form</h1>
-    <p>Validation rules give you strong Playwright test cases.</p>
-  </div>
-
-  <div class="grid">
-    <div class="card" style="grid-column:span 12">
-      <form id="contactForm">
-        <div class="row">
-          <div>
-            <label class="label" for="name">Name</label>
-            <input class="input" id="name" type="text" placeholder="Your name" />
-          </div>
-          <div>
-            <label class="label" for="topic">Topic</label>
-            <select class="input" id="topic">
-              <option value="">Select…</option>
-              <option>Bug report</option>
-              <option>Feature request</option>
-              <option>General inquiry</option>
-            </select>
-          </div>
+  <!-- HEADER + NAVBAR -->
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="brand">
+        <img src="assets/images/playwright.png" alt="Playwright logo">
+        <img src="assets/images/docker.png" alt="Docker logo">
+        <div class="brand-title">
+          <strong>Demo Form</strong>
+          <span>Form validation scenarios</span>
         </div>
-
-        <label class="label" for="details">Details</label>
-        <textarea class="input" id="details" rows="5" placeholder="At least 10 characters..."></textarea>
-
-        <button class="btn" id="submitBtn" type="submit">Submit</button>
-        <div id="formMessage" class="alert" aria-live="polite"></div>
-      </form>
+      </div>
     </div>
-  </div>
 
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="demo-login.html">Demo Login</a>
+      <a class="active" href="demo-form.html">Demo Form</a>
+      <a href="project.html">Project</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="card">
+      <h1>Demo Form</h1>
+      <p>Use this form to practice Playwright form validation tests.</p>
+
+      <div class="form">
+        <input class="input" id="name" placeholder="Full name">
+        <input class="input" id="email" placeholder="Email address">
+        <button class="button" id="submitBtn">Submit</button>
+      </div>
+
+      <p class="message" id="formMessage"></p>
+    </section>
+
+    <script>
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const submitBtn = document.getElementById('submitBtn');
+      const formMessage = document.getElementById('formMessage');
+
+      submitBtn.addEventListener('click', () => {
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+
+        if (!name || !email) {
+          formMessage.textContent = 'All fields are required.';
+          return;
+        }
+
+        if (!email.includes('@')) {
+          formMessage.textContent = 'Invalid email address.';
+          return;
+        }
+
+        formMessage.textContent = 'Form submitted successfully!';
+      });
+    </script>
+  </main>
+
+  <!-- FOOTER -->
   <footer class="site-footer">
-  &lt;&lt; E2E Playwright &gt;&gt;
-</footer>
+    &lt;&lt; E2E Playwright &gt;&gt;
+  </footer>
 
-
-<script src="app.js"></script>
-<script>
-  document.getElementById("contactForm").addEventListener("submit", handleContact);
-</script>
 </body>
 </html>
