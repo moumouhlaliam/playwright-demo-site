@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Playwright Demo Site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
 
@@ -15,7 +15,7 @@
         <img src="assets/images/docker.png" alt="Docker logo">
         <div class="brand-title">
           <strong>Playwright Demo Site</strong>
-          <span>Practice E2E automation</span>
+          <span>E2E practice website</span>
         </div>
       </div>
     </div>
@@ -23,39 +23,37 @@
     <nav class="navbar">
       <a class="active" href="index.html">Home</a>
       <a href="demo-login.html">Demo Login</a>
-      <a href="tools.html">Tools</a>
-      <a href="about.html">About</a>
+      <a href="demo-form.html">Demo Form</a>
+      <a href="project.html">Project</a>
     </nav>
   </header>
 
   <main>
     <section class="card">
       <h1>Welcome 👋</h1>
-      <p>
-        This website is made to practice end-to-end testing with <strong>Playwright</strong>.
-        The layout is stable and easy to automate with selectors.
-      </p>
-      <a class="btn" href="demo-login.html">Go to Demo Login</a>
+      <p>This site is built to practice E2E automation with Playwright.</p>
+
+      <a class="btn" href="demo-login.html">Start with Demo Login</a>
 
       <div class="grid">
         <div class="kpi">
-          <h3>🎭 Playwright</h3>
-          <p>Reliable E2E tests with strong debugging.</p>
+          <h3>Stable UI</h3>
+          <p>Selectors remain stable for Playwright tests.</p>
         </div>
         <div class="kpi">
-          <h3>🐳 Docker</h3>
-          <p>Consistent environment for local + CI execution.</p>
+          <h3>Negative scenarios</h3>
+          <p>Try empty fields, invalid credentials, validations.</p>
         </div>
         <div class="kpi">
-          <h3>⚙️ CI Ready</h3>
-          <p>Easy to integrate with GitHub Actions later.</p>
+          <h3>CI ready</h3>
+          <p>Easy to extend with Docker & CI pipelines.</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    &lt;&lt; E2E Playwright &gt;&gt;
+    E2E Playwright
   </footer>
 
 </body>
