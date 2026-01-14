@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Demo Login | QA Portfolio</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="container">
+  <div class="nav">
+    <div class="brand">QA Portfolio</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="demo-login.html">Demo App</a>
+      <a href="demo-form.html">Demo Form</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Demo Login</h1>
+    <p>Use this for Playwright E2E tests.</p>
+    <p class="small"><b>Valid credentials:</b> qa@test.com / Password123</p>
+  </div>
+
+  <div class="grid">
+    <div class="card" style="grid-column:span 12">
+      <form id="loginForm">
+        <label class="label" for="email">Email</label>
+        <input class="input" id="email" type="email" placeholder="qa@test.com" />
+
+        <label class="label" for="password">Password</label>
+        <input class="input" id="password" type="password" placeholder="Password123" />
+
+        <button class="btn" id="loginBtn" type="submit">Login</button>
+        <div id="loginMessage" class="alert" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer">E2E ideas: valid login, invalid login, empty fields, message assertions.</div>
+</div>
+
+<script src="app.js"></script>
+<script>
+  document.getElementById("loginForm").addEventListener("submit", handleLogin);
+</script>
+</body>
+</html>
