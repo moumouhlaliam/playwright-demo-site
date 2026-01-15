@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Demo Form</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="style.css?v=777" />
 </head>
 <body>
 
@@ -15,7 +15,7 @@
         <img src="assets/images/docker.png" alt="Docker logo">
         <div class="brand-title">
           <strong>Demo Form</strong>
-          <span>Form validation scenarios</span>
+          <span>Form validation (Playwright)</span>
         </div>
       </div>
     </div>
@@ -31,38 +31,58 @@
   <main>
     <section class="card">
       <h1>Demo Form</h1>
-      <p>Practice required fields and email validation tests.</p>
+      <p>Fill the form and submit to trigger demo validation.</p>
 
       <div class="form">
-        <input class="input" id="name" placeholder="Full name" />
-        <input class="input" id="email" placeholder="Email address" />
+        <!-- IDs must match Playwright tests -->
+        <input class="input" id="name" placeholder="Name" />
+
+        <select id="topic" aria-label="Topic">
+          <option value="">Select a topic</option>
+          <option value="Bug report">Bug report</option>
+          <option value="Feature request">Feature request</option>
+          <option value="General question">General question</option>
+        </select>
+
+        <textarea id="details" placeholder="Details"></textarea>
+
         <button class="button" id="submitBtn">Submit</button>
       </div>
 
+      <!-- ID must match tests -->
       <p class="message" id="formMessage"></p>
     </section>
 
     <script>
       const nameInput = document.getElementById('name');
-      const emailInput = document.getElementById('email');
+      const topicSelect = document.getElementById('topic');
+      const detailsInput = document.getElementById('details');
       const submitBtn = document.getElementById('submitBtn');
       const formMessage = document.getElementById('formMessage');
 
       submitBtn.addEventListener('click', () => {
         const name = nameInput.value.trim();
-        const email = emailInput.value.trim();
+        const topic = topicSelect.value;
+        const details = detailsInput.value.trim();
 
-        if (!name || !email) {
-          formMessage.textContent = 'All fields are required.';
+        // This error text is expected by your Playwright test (contains...)
+        if (name.length < 2) {
+          formMessage.textContent = 'Name must be at least 2 characters.';
           return;
         }
 
-        if (!email.includes('@')) {
-          formMessage.textContent = 'Invalid email address.';
+        if (!topic) {
+          formMessage.textContent = 'Please select a topic.';
           return;
         }
 
-        formMessage.textContent = 'Form submitted successfully!';
+        if (details.length < 10) {
+          formMessage.textContent = 'Details must be at least 10 characters.';
+          return;
+        }
+
+        // Success text MUST match your Playwright test exactly
+        formMessage.textContent = 'Submitted successfully! (demo)';
       });
     </script>
   </main>
