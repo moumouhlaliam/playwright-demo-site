@@ -1,19 +1,13 @@
 
-* {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
+* { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
 
-:root {
-  /* Couleur bourgogne comme ta capture */
-  --burgundy: #920721;
-
+:root{
+  --burgundy: #920721;   /* couleur comme ta photo */
   --text-grey: #d1d5db;
   --card-shadow: 0 10px 28px rgba(0,0,0,0.08);
-  --soft-border: rgba(209, 213, 219, 0.35);
 }
 
-body {
+body{
   margin: 0;
   background: #f4f6f8;
   color: #111;
@@ -23,13 +17,11 @@ body {
 }
 
 /* ================= HEADER + NAV ================= */
-.site-header {
+.site-header{
   background: var(--burgundy);
-  color: var(--text-grey);
 }
 
-/* Conteneur haut (logos + titre) */
-.top-bar {
+.top-bar{
   max-width: 1100px;
   margin: 0 auto;
   padding: 14px 18px;
@@ -39,40 +31,38 @@ body {
   gap: 16px;
 }
 
-.brand {
+.brand{
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.brand img {
+.brand img{
   width: 44px;
   height: auto;
   display: block;
-  background: #ffffff;
+  background: #fff;
   border-radius: 10px;
   padding: 6px;
 }
 
-.brand-title {
+.brand-title{
   display: flex;
   flex-direction: column;
   line-height: 1.15;
 }
 
-.brand-title strong {
-  color: #ffffff;
+.brand-title strong{
+  color: #fff;
   font-size: 1.05rem;
-  letter-spacing: 0.2px;
 }
 
-.brand-title span {
+.brand-title span{
   color: var(--text-grey);
   font-size: 0.9rem;
 }
 
-/* Navbar (même couleur que footer) */
-.navbar {
+.navbar{
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 18px 16px 18px;
@@ -81,34 +71,21 @@ body {
   gap: 12px;
 }
 
-.navbar a {
+.navbar a{
   text-decoration: none;
-  color: #ffffff;
+  color: #fff;
   font-weight: 800;
   padding: 10px 14px;
   border-radius: 10px;
-
-  /* style pro sur fond bourgogne */
   border: 1px solid rgba(255,255,255,0.35);
   background: rgba(255,255,255,0.06);
-  transition: background 0.2s ease, transform 0.05s ease;
 }
 
-.navbar a:hover {
-  background: rgba(255,255,255,0.14);
-}
-
-.navbar a:active {
-  transform: translateY(1px);
-}
-
-.navbar a.active {
-  background: rgba(255,255,255,0.22);
-  border-color: rgba(255,255,255,0.55);
-}
+.navbar a:hover{ background: rgba(255,255,255,0.14); }
+.navbar a.active{ background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.55); }
 
 /* ================= MAIN ================= */
-main {
+main{
   flex: 1;
   width: 100%;
   max-width: 1100px;
@@ -116,47 +93,33 @@ main {
   padding: 0 18px;
 }
 
-.card {
-  background: #ffffff;
+.card{
+  background: #fff;
   border-radius: 16px;
   padding: 22px;
   box-shadow: var(--card-shadow);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
-  margin-top: 16px;
-}
-
-.kpi {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-}
-
-.btn {
+.btn{
   display: inline-block;
   margin-top: 12px;
   padding: 12px 16px;
   background: #111;
-  color: white;
+  color: #fff;
   text-decoration: none;
   border-radius: 10px;
   font-weight: 800;
 }
 
-/* Form styling (demo pages) */
-.form {
+/* Form styling */
+.form{
   display: grid;
   gap: 10px;
   margin-top: 14px;
-  max-width: 420px;
+  max-width: 520px;
 }
 
-.input {
+.input, select, textarea{
   padding: 12px 12px;
   border-radius: 10px;
   border: 1px solid #cbd5e1;
@@ -164,11 +127,9 @@ main {
   background: #fff;
 }
 
-.input:focus {
-  border-color: #111;
-}
+textarea{ min-height: 110px; resize: vertical; }
 
-.button {
+.button{
   padding: 12px 14px;
   border-radius: 10px;
   border: 0;
@@ -178,15 +139,15 @@ main {
   cursor: pointer;
 }
 
-.message {
+.message{
   margin-top: 10px;
   font-weight: 800;
 }
 
-/* ================= FOOTER (7 cm, même couleur que navbar) ================= */
-.site-footer {
-  height: 7cm;                  /* demandé */
-  background: var(--burgundy);  /* EXACTEMENT même couleur */
+/* ================= FOOTER ================= */
+.site-footer{
+  height: 7cm;
+  background: var(--burgundy);
   color: var(--text-grey);
   display: flex;
   align-items: center;
@@ -196,15 +157,3 @@ main {
   font-size: 1.25rem;
   letter-spacing: 1px;
 }
-
-/* (Optionnel) : sur petits écrans, éviter que le footer prenne trop */
-@media (max-width: 480px) {
-  .site-footer { height: 4cm; }
-}
-/* ===== FORCE FOOTER COLOR (DEBUG + FINAL) ===== */
-footer.site-footer {
-  background-color: #920721 !important;
-  height: 7cm !important;
-  color: #d1d5db !important;
-}
-
