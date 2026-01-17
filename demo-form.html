@@ -1,95 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Demo Form</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css?v=777" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="top-bar">
-      <div class="brand">
-        <img src="assets/images/playwright.png" alt="Playwright logo">
-        <img src="assets/images/docker.png" alt="Docker logo">
-        <div class="brand-title">
-          <strong>Demo Form</strong>
-          <span>Form validation (Playwright)</span>
-        </div>
-      </div>
-    </div>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">Moumouh QA</a>
+  </nav>
+</header>
 
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="demo-login.html">Demo Login</a>
-      <a class="active" href="demo-form.html">Demo Form</a>
-      <a href="project.html">Project</a>
-    </nav>
-  </header>
+<main class="section">
+  <div class="container panel">
+    <h1>Demo Form</h1>
 
-  <main>
-    <section class="card">
-      <h1>Demo Form</h1>
-      <p>Fill the form and submit to trigger demo validation.</p>
+    <input id="name" placeholder="Name" />
+    <select id="topic">
+      <option>Bug report</option>
+      <option>Feature request</option>
+    </select>
+    <textarea id="details" placeholder="Details"></textarea>
+    <button id="submitBtn" class="btn">Submit</button>
 
-      <div class="form">
-        <!-- IDs must match Playwright tests -->
-        <input class="input" id="name" placeholder="Name" />
+    <p id="formMessage"></p>
+  </div>
+</main>
 
-        <select id="topic" aria-label="Topic">
-          <option value="">Select a topic</option>
-          <option value="Bug report">Bug report</option>
-          <option value="Feature request">Feature request</option>
-          <option value="General question">General question</option>
-        </select>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-title">Demo Form</div>
+  </div>
+</footer>
 
-        <textarea id="details" placeholder="Details"></textarea>
-
-        <button class="button" id="submitBtn">Submit</button>
-      </div>
-
-      <!-- ID must match tests -->
-      <p class="message" id="formMessage"></p>
-    </section>
-
-    <script>
-      const nameInput = document.getElementById('name');
-      const topicSelect = document.getElementById('topic');
-      const detailsInput = document.getElementById('details');
-      const submitBtn = document.getElementById('submitBtn');
-      const formMessage = document.getElementById('formMessage');
-
-      submitBtn.addEventListener('click', () => {
-        const name = nameInput.value.trim();
-        const topic = topicSelect.value;
-        const details = detailsInput.value.trim();
-
-        // This error text is expected by your Playwright test (contains...)
-        if (name.length < 2) {
-          formMessage.textContent = 'Name must be at least 2 characters.';
-          return;
-        }
-
-        if (!topic) {
-          formMessage.textContent = 'Please select a topic.';
-          return;
-        }
-
-        if (details.length < 10) {
-          formMessage.textContent = 'Details must be at least 10 characters.';
-          return;
-        }
-
-        // Success text MUST match your Playwright test exactly
-        formMessage.textContent = 'Submitted successfully! (demo)';
-      });
-    </script>
-  </main>
-
-  <footer class="site-footer">
-    E2E Playwright
-  </footer>
+<button id="backToTop" class="backtotop">↑</button>
+<div id="toast" class="toast"></div>
 
 </body>
 </html>
