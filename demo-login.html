@@ -1,11 +1,10 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Demo Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>Demo Login • Moumouh QA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
   <script defer src="app.js"></script>
 </head>
 <body>
@@ -13,29 +12,79 @@
 <header class="site-header">
   <nav class="nav">
     <a class="brand" href="index.html">Moumouh QA</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" data-nav>Home</a>
+      <a href="project.html" data-nav>Projects</a>
+      <a href="tools.html" data-nav>Tools</a>
+      <a href="about.html" data-nav>About</a>
+      <a href="demo-login.html" class="pill-link">Demo Login</a>
+      <a href="demo-form.html" class="pill-link">Demo Form</a>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">🌓</button>
+    </div>
   </nav>
 </header>
 
 <main class="section">
-  <div class="container panel">
-    <h1>Demo Login</h1>
+  <div class="container">
+    <div class="panel reveal">
+      <span class="kicker">🔐 Demo Login</span>
+      <h1 style="margin-top:12px;">Sign in</h1>
+      <p class="lead">Testable login flow with stable IDs for Playwright.</p>
 
-    <input id="email" placeholder="Email" />
-    <input id="password" type="password" placeholder="Password" />
-    <button id="loginBtn" class="btn">Login</button>
+      <div class="grid" style="grid-template-columns:1fr; gap:12px; margin-top:14px;">
+        <div class="card">
+          <form id="loginForm" class="form">
+            <label class="field">
+              <span>Email</span>
+              <input id="email" type="email" placeholder="qa@test.com" autocomplete="username" />
+              <small class="hint">Try: <b>qa@test.com</b></small>
+            </label>
 
-    <p id="loginMessage"></p>
+            <label class="field">
+              <span>Password</span>
+              <input id="password" type="password" placeholder="Password123" autocomplete="current-password" />
+              <small class="hint">Try: <b>Password123</b></small>
+            </label>
+
+            <div class="row">
+              <button id="loginBtn" class="btn" type="button">Login</button>
+              <button class="btn btn-ghost" type="button" id="fillValid">Autofill valid</button>
+              <button class="btn btn-ghost" type="button" id="clearLogin">Clear</button>
+            </div>
+
+            <p id="loginMessage" class="alert" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0;">Test cases</h3>
+          <ul class="list">
+            <li>✅ Success login</li>
+            <li>❌ Invalid credentials</li>
+            <li>⚠️ Empty fields validation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-title">Demo Login</div>
+    <div>
+      <div class="footer-title">Demo Login</div>
+      <div class="footer-sub">Playwright stable IDs</div>
+    </div>
+    <div class="footer-links">
+      <a href="demo-form.html">Demo Form</a>
+      <a href="project.html">Projects</a>
+    </div>
   </div>
 </footer>
 
-<button id="backToTop" class="backtotop">↑</button>
-<div id="toast" class="toast"></div>
+<button id="backToTop" class="backtotop" aria-label="Back to top">↑</button>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 </body>
 </html>
