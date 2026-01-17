@@ -1,11 +1,11 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>About • Moumouh QA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
   <script defer src="app.js"></script>
 </head>
 <body>
@@ -13,7 +13,7 @@
 <header class="site-header">
   <nav class="nav">
     <a class="brand" href="index.html">Moumouh QA</a>
-    <button class="nav-toggle" id="navToggle">☰</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="index.html" data-nav>Home</a>
       <a href="project.html" data-nav>Projects</a>
@@ -21,47 +21,59 @@
       <a href="about.html" data-nav>About</a>
       <a href="demo-login.html" class="pill-link">Demo Login</a>
       <a href="demo-form.html" class="pill-link">Demo Form</a>
-      <button class="icon-btn" id="themeToggle">🌓</button>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">🌓</button>
     </div>
   </nav>
 </header>
 
 <main class="section">
   <div class="container">
-    <h1 class="reveal">About This Project</h1>
-    <p class="lead reveal">
-      This site demonstrates UI automation testing using Playwright with realistic user flows.
-    </p>
-
-    <div class="grid">
-      <div class="card reveal">
-        <h3>🎯 Goal</h3>
-        <p>Create a clean QA automation portfolio.</p>
-      </div>
-      <div class="card reveal">
-        <h3>🧠 Focus</h3>
-        <p>Selectors, assertions, stability.</p>
-      </div>
-      <div class="card reveal">
-        <h3>🛠 Tech</h3>
-        <p>HTML, CSS, JS, Playwright.</p>
-      </div>
+    <div class="panel reveal">
+      <span class="kicker">👋 About</span>
+      <h1>About this site</h1>
+      <p class="lead">
+        This project demonstrates a clean UI demo app designed specifically for QA Automation and Playwright E2E testing.
+        The pages use stable IDs and deterministic messages to keep tests reliable.
+      </p>
     </div>
+
+    <section class="section">
+      <div class="grid">
+        <article class="card reveal">
+          <h3>🎯 Purpose</h3>
+          <p>Portfolio-ready demo for showcasing Playwright testing skills.</p>
+        </article>
+
+        <article class="card reveal">
+          <h3>✅ Testability</h3>
+          <p>Stable selectors, clear validations, consistent messages.</p>
+        </article>
+
+        <article class="card reveal">
+          <h3>🧩 Expandable</h3>
+          <p>Add more pages, components, and test scenarios anytime.</p>
+        </article>
+      </div>
+    </section>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-title">Playwright Demo</div>
+    <div>
+      <div class="footer-title">Moumouh QA</div>
+      <div class="footer-sub">Playwright Demo Portfolio</div>
+    </div>
     <div class="footer-links">
-      <a href="index.html">Home</a>
       <a href="project.html">Projects</a>
+      <a href="tools.html">Tools</a>
+      <a href="index.html">Home</a>
     </div>
   </div>
 </footer>
 
-<button id="backToTop" class="backtotop">↑</button>
-<div id="toast" class="toast"></div>
+<button id="backToTop" class="backtotop" aria-label="Back to top">↑</button>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 </body>
 </html>
