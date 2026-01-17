@@ -1,72 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Demo Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css?v=777" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="top-bar">
-      <div class="brand">
-        <img src="assets/images/playwright.png" alt="Playwright logo">
-        <img src="assets/images/docker.png" alt="Docker logo">
-        <div class="brand-title">
-          <strong>Demo Login</strong>
-          <span>Authentication demo</span>
-        </div>
-      </div>
-    </div>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">Moumouh QA</a>
+  </nav>
+</header>
 
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a class="active" href="demo-login.html">Demo Login</a>
-      <a href="demo-form.html">Demo Form</a>
-      <a href="project.html">Project</a>
-    </nav>
-  </header>
+<main class="section">
+  <div class="container panel">
+    <h1>Demo Login</h1>
 
-  <main>
-    <section class="card">
-      <h1>Demo Login</h1>
+    <input id="email" placeholder="Email" />
+    <input id="password" type="password" placeholder="Password" />
+    <button id="loginBtn" class="btn">Login</button>
 
-      <div class="form">
-        <input class="input" id="email" placeholder="Email" />
-        <input class="input" id="password" type="password" placeholder="Password" />
-        <button class="button" id="loginBtn">Login</button>
-      </div>
+    <p id="loginMessage"></p>
+  </div>
+</main>
 
-      <p class="message" id="loginMessage"></p>
-    </section>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-title">Demo Login</div>
+  </div>
+</footer>
 
-    <script>
-      const email = document.getElementById('email');
-      const password = document.getElementById('password');
-      const loginBtn = document.getElementById('loginBtn');
-      const loginMessage = document.getElementById('loginMessage');
-
-      loginBtn.addEventListener('click', () => {
-        const e = email.value.trim();
-        const p = password.value.trim();
-
-        if (!e || !p) {
-          loginMessage.textContent = 'Please fill in all fields.';
-          return;
-        }
-        if (e === 'qa@test.com' && p === 'Password123') {
-          loginMessage.textContent = 'Login successful!';
-        } else {
-          loginMessage.textContent = 'Invalid credentials.';
-        }
-      });
-    </script>
-  </main>
-
-  <footer class="site-footer">
-    E2E Playwright
-  </footer>
+<button id="backToTop" class="backtotop">↑</button>
+<div id="toast" class="toast"></div>
 
 </body>
 </html>
