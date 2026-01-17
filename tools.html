@@ -1,11 +1,10 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tools</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>Tools • Moumouh QA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
   <script defer src="app.js"></script>
 </head>
 <body>
@@ -13,37 +12,69 @@
 <header class="site-header">
   <nav class="nav">
     <a class="brand" href="index.html">Moumouh QA</a>
-    <button class="nav-toggle" id="navToggle">☰</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="index.html" data-nav>Home</a>
       <a href="project.html" data-nav>Projects</a>
       <a href="tools.html" data-nav>Tools</a>
       <a href="about.html" data-nav>About</a>
-      <button class="icon-btn" id="themeToggle">🌓</button>
+      <a href="demo-login.html" class="pill-link">Demo Login</a>
+      <a href="demo-form.html" class="pill-link">Demo Form</a>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">🌓</button>
     </div>
   </nav>
 </header>
 
 <main class="section">
   <div class="container">
-    <h1 class="reveal">Tools Used</h1>
-
-    <div class="grid">
-      <div class="card reveal"><h3>Playwright</h3><p>E2E testing</p></div>
-      <div class="card reveal"><h3>GitHub Pages</h3><p>Hosting</p></div>
-      <div class="card reveal"><h3>JavaScript</h3><p>UI interactions</p></div>
+    <div class="panel reveal">
+      <span class="kicker">🧰 Tools</span>
+      <h1>Tech stack</h1>
+      <p class="lead">Tools used to build, host, and test this demo website.</p>
     </div>
+
+    <section class="section">
+      <div class="grid">
+        <article class="card reveal">
+          <h3>Playwright</h3>
+          <p>End-to-end testing with reliable assertions and selectors.</p>
+        </article>
+
+        <article class="card reveal">
+          <h3>GitHub Pages</h3>
+          <p>Static hosting for the demo website.</p>
+        </article>
+
+        <article class="card reveal">
+          <h3>GitHub Actions</h3>
+          <p>Automated test runs and Playwright report artifact.</p>
+        </article>
+
+        <article class="card reveal">
+          <h3>HTML / CSS / JS</h3>
+          <p>Fast, clean UI without frameworks.</p>
+        </article>
+      </div>
+    </section>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-title">Tools</div>
+    <div>
+      <div class="footer-title">Tools</div>
+      <div class="footer-sub">Playwright Demo Portfolio</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="project.html">Projects</a>
+      <a href="about.html">About</a>
+    </div>
   </div>
 </footer>
 
-<button id="backToTop" class="backtotop">↑</button>
-<div id="toast" class="toast"></div>
+<button id="backToTop" class="backtotop" aria-label="Back to top">↑</button>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 </body>
 </html>
