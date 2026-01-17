@@ -1,11 +1,10 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Demo Form</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>Demo Form • Moumouh QA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
   <script defer src="app.js"></script>
 </head>
 <body>
@@ -13,33 +12,88 @@
 <header class="site-header">
   <nav class="nav">
     <a class="brand" href="index.html">Moumouh QA</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" data-nav>Home</a>
+      <a href="project.html" data-nav>Projects</a>
+      <a href="tools.html" data-nav>Tools</a>
+      <a href="about.html" data-nav>About</a>
+      <a href="demo-login.html" class="pill-link">Demo Login</a>
+      <a href="demo-form.html" class="pill-link">Demo Form</a>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">🌓</button>
+    </div>
   </nav>
 </header>
 
 <main class="section">
-  <div class="container panel">
-    <h1>Demo Form</h1>
+  <div class="container">
+    <div class="panel reveal">
+      <span class="kicker">📝 Demo Form</span>
+      <h1 style="margin-top:12px;">Submit a request</h1>
+      <p class="lead">Validation + success message, perfect for E2E tests.</p>
 
-    <input id="name" placeholder="Name" />
-    <select id="topic">
-      <option>Bug report</option>
-      <option>Feature request</option>
-    </select>
-    <textarea id="details" placeholder="Details"></textarea>
-    <button id="submitBtn" class="btn">Submit</button>
+      <div class="grid" style="grid-template-columns:1.1fr .9fr; gap:14px; margin-top:14px;">
+        <div class="card">
+          <form id="demoForm" class="form">
+            <label class="field">
+              <span>Name</span>
+              <input id="name" placeholder="John Doe" />
+              <small class="hint">Minimum 2 characters</small>
+            </label>
 
-    <p id="formMessage"></p>
+            <label class="field">
+              <span>Topic</span>
+              <select id="topic">
+                <option value="Bug report">Bug report</option>
+                <option value="Feature request">Feature request</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Details</span>
+              <textarea id="details" rows="5" placeholder="Describe your request (min 10 characters)"></textarea>
+              <small class="hint">Minimum 10 characters</small>
+            </label>
+
+            <div class="row">
+              <button id="submitBtn" class="btn" type="button">Submit</button>
+              <button class="btn btn-ghost" type="button" id="fillForm">Autofill valid</button>
+              <button class="btn btn-ghost" type="button" id="clearForm">Clear</button>
+            </div>
+
+            <p id="formMessage" class="alert" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0;">What to test</h3>
+          <ul class="list">
+            <li>✅ Valid submit shows success message</li>
+            <li>⚠️ Empty submit shows validation text</li>
+            <li>🧪 Assertions on #formMessage</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-title">Demo Form</div>
+    <div>
+      <div class="footer-title">Demo Form</div>
+      <div class="footer-sub">Validation • UX • Testability</div>
+    </div>
+    <div class="footer-links">
+      <a href="demo-login.html">Demo Login</a>
+      <a href="project.html">Projects</a>
+    </div>
   </div>
 </footer>
 
-<button id="backToTop" class="backtotop">↑</button>
-<div id="toast" class="toast"></div>
+<button id="backToTop" class="backtotop" aria-label="Back to top">↑</button>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 </body>
 </html>
