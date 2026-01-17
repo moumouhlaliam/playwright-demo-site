@@ -1,49 +1,56 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Project</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css?v=777" />
+  <meta charset="UTF-8">
+  <title>Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="top-bar">
-      <div class="brand">
-        <img src="assets/images/playwright.png" alt="Playwright logo">
-        <img src="assets/images/docker.png" alt="Docker logo">
-        <div class="brand-title">
-          <strong>Project</strong>
-          <span>Test scenarios overview</span>
-        </div>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">Moumouh QA</a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" data-nav>Home</a>
+      <a href="project.html" data-nav>Projects</a>
+      <a href="tools.html" data-nav>Tools</a>
+      <a href="about.html" data-nav>About</a>
+      <button class="icon-btn" id="themeToggle">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="section">
+  <div class="container">
+    <h1 class="reveal">Projects</h1>
+
+    <div class="grid">
+      <div class="card reveal">
+        <h3>Login Flow</h3>
+        <p>Valid / invalid login scenarios.</p>
+        <a class="link" href="demo-login.html">Open</a>
+      </div>
+      <div class="card reveal">
+        <h3>Form Flow</h3>
+        <p>Field validation and submit.</p>
+        <a class="link" href="demo-form.html">Open</a>
       </div>
     </div>
+  </div>
+</main>
 
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="demo-login.html">Demo Login</a>
-      <a href="demo-form.html">Demo Form</a>
-      <a class="active" href="project.html">Project</a>
-    </nav>
-  </header>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-title">Projects</div>
+  </div>
+</footer>
 
-  <main>
-    <section class="card">
-      <h1>Project</h1>
-      <p>This page summarizes the demo pages and what to test.</p>
-
-      <ul>
-        <li><strong>Demo Login</strong>: success / invalid / empty fields</li>
-        <li><strong>Demo Form</strong>: validations + success submit</li>
-        <li><strong>Navigation</strong>: verify each link works</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    E2E Playwright
-  </footer>
+<button id="backToTop" class="backtotop">↑</button>
+<div id="toast" class="toast"></div>
 
 </body>
 </html>
