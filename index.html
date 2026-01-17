@@ -1,9 +1,9 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Playwright Demo Portfolio</title>
+  <meta charset="utf-8" />
+  <title>Moumouh QA • Playwright Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="app.js"></script>
@@ -13,7 +13,9 @@
 <header class="site-header">
   <nav class="nav">
     <a class="brand" href="index.html">Moumouh QA</a>
-    <button class="nav-toggle" id="navToggle">☰</button>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+
     <div class="nav-links" id="navLinks">
       <a href="index.html" data-nav>Home</a>
       <a href="project.html" data-nav>Projects</a>
@@ -21,7 +23,7 @@
       <a href="about.html" data-nav>About</a>
       <a href="demo-login.html" class="pill-link">Demo Login</a>
       <a href="demo-form.html" class="pill-link">Demo Form</a>
-      <button class="icon-btn" id="themeToggle">🌓</button>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">🌓</button>
     </div>
   </nav>
 </header>
@@ -33,21 +35,30 @@
         <span class="kicker">⚡ Playwright E2E Portfolio</span>
         <h1>Modern UI tested with Playwright</h1>
         <p class="lead">
-          Interactive demo website built for QA Automation portfolio using Playwright.
+          Interactive demo website for QA Automation portfolio: clean UI, realistic flows, deterministic messages.
         </p>
         <div class="hero-actions">
-          <a class="btn" href="project.html">View Projects</a>
-          <a class="btn btn-ghost" href="demo-login.html">Demo Login</a>
-          <a class="btn btn-ghost" href="demo-form.html">Demo Form</a>
+          <a class="btn" href="project.html">View Projects →</a>
+          <a class="btn btn-ghost" href="demo-login.html">Try Demo Login</a>
+          <a class="btn btn-ghost" href="demo-form.html">Try Demo Form</a>
         </div>
       </div>
 
       <div class="panel reveal">
-        <h3>Highlights</h3>
-        <div class="grid">
-          <div class="card"><h3>🧪 E2E Tests</h3><p>Stable selectors & assertions.</p></div>
-          <div class="card"><h3>🚀 CI Ready</h3><p>GitHub Pages + Playwright.</p></div>
-          <div class="card"><h3>🎨 Modern UI</h3><p>Animations & dark mode.</p></div>
+        <h3 style="margin:0 0 10px;">Highlights</h3>
+        <div class="grid" style="grid-template-columns:1fr;gap:10px;">
+          <div class="card">
+            <h3>🧪 E2E Ready</h3>
+            <p>Stable selectors & assertions.</p>
+          </div>
+          <div class="card">
+            <h3>🎨 Modern UI</h3>
+            <p>Animations, dark mode, responsive nav.</p>
+          </div>
+          <div class="card">
+            <h3>🚀 CI Friendly</h3>
+            <p>GitHub Actions workflow included.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -55,11 +66,39 @@
 
   <section class="section">
     <div class="container">
-      <h2 class="section-title reveal">Screenshots</h2>
+      <h2 class="section-title reveal">Demos</h2>
+
+      <div class="grid">
+        <article class="card reveal">
+          <h3>Demo Login</h3>
+          <p>Valid / invalid credentials and UI messages.</p>
+          <a class="link" href="demo-login.html">Open →</a>
+        </article>
+
+        <article class="card reveal">
+          <h3>Demo Form</h3>
+          <p>Validation rules + success feedback.</p>
+          <a class="link" href="demo-form.html">Open →</a>
+        </article>
+
+        <article class="card reveal">
+          <h3>Tools</h3>
+          <p>Playwright, GitHub Pages, CI workflow.</p>
+          <a class="link" href="tools.html">Open →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Gallery</h2>
+      <p class="lead reveal">Put screenshots in <code>Assets/images</code> named <code>screen1.jpg</code>, <code>screen2.jpg</code>, <code>screen3.jpg</code>.</p>
+
       <div class="gallery reveal">
-        <img src="Assets/images/screen1.jpg" alt="">
-        <img src="Assets/images/screen2.jpg" alt="">
-        <img src="Assets/images/screen3.jpg" alt="">
+        <img src="Assets/images/screen1.jpg" alt="Screenshot 1">
+        <img src="Assets/images/screen2.jpg" alt="Screenshot 2">
+        <img src="Assets/images/screen3.jpg" alt="Screenshot 3">
       </div>
     </div>
   </section>
@@ -69,19 +108,20 @@
   <div class="footer-inner">
     <div>
       <div class="footer-title">Playwright Demo Site</div>
-      <div class="footer-sub">QA Automation Portfolio</div>
+      <div class="footer-sub">QA Automation Portfolio • GitHub Pages</div>
     </div>
+
     <div class="footer-links">
       <a href="project.html">Projects</a>
       <a href="tools.html">Tools</a>
       <a href="about.html">About</a>
-      <a href="https://github.com/moumouhlaliam" target="_blank">GitHub</a>
+      <a href="https://github.com/moumouhlaliam" target="_blank" rel="noreferrer">GitHub</a>
     </div>
   </div>
 </footer>
 
-<button id="backToTop" class="backtotop">↑</button>
-<div id="toast" class="toast"></div>
+<button id="backToTop" class="backtotop" aria-label="Back to top">↑</button>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 </body>
 </html>
