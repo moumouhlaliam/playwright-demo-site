@@ -1,72 +1,59 @@
-// Demo Login (fake)
-function handleLogin(e){
-  e.preventDefault();
-  const email = document.querySelector("#email").value.trim();
-  const password = document.querySelector("#password").value;
+// Theme (saved)
+const root = document.documentElement;
+const saved = localStorage.getItem("theme");
+if (saved) root.setAttribute("data-theme", saved);
 
-  const msg = document.querySelector("#loginMessage");
-  msg.className = "alert";
-  msg.textContent = "";
-
-  if(!email || !password){
-    msg.classList.add("err");
-    msg.textContent = "Please fill in all fields.";
-    return;
-  }
-
-  if(email === "qa@test.com" && password === "Password123"){
-    msg.classList.add("ok");
-    msg.textContent = "Login successful!";
-    localStorage.setItem("demo_auth", "true");
-  } else {
-    msg.classList.add("err");
-    msg.textContent = "Invalid credentials.";
-    localStorage.removeItem("demo_auth");
-  }
+const themeBtn = document.getElementById("themeToggle");
+if (themeBtn) {
+  themeBtn.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme") || "dark";
+    const next = current === "light" ? "dark" : "light";
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  });
 }
 
-// Demo Form (validation)
-function handleContact(e){
-  e.preventDefault();
-  const name = document.querySelector("#name").value.trim();
-  const topic = document.querySelector("#topic").value;
-  const details = document.querySelector("#details").value.trim();
-  const msg = document.querySelector("#formMessage");
-
-  msg.className = "alert";
-  msg.textContent = "";
-
-  if(name.length < 2){
-    msg.classList.add("err");
-    msg.textContent = "Name must be at least 2 characters.";
-    return;
+// Reveal on scroll
+const revealEls = document.querySelectorAll(".reveal");
+const io = new IntersectionObserver((entries) => {
+  for (const e of entries) {
+    if (e.isIntersecting) e.target.classList.add("is-visible");
   }
-  if(!topic){
-    msg.classList.add("err");
-    msg.textContent = "Please select a topic.";
-    return;
-  }
-  if(details.length < 10){
-    msg.classList.add("err");
-    msg.textContent = "Details must be at least 10 characters.";
-    return;
-  }
+}, { threshold: 0.12 });
+revealEls.forEach(el => io.observe(el));
 
-  msg.classList.add("ok");
-  msg.textContent = "Submitted successfully! (demo)";
+// Counter animation
+function animateCount(el) {
+  const target = Number(el.dataset.count || 0);
+  const start = 0;
+  const duration = 900;
+  const t0 = performance.now();
+
+  function tick(t) {
+    const p = Math.min(1, (t - t0) / duration);
+    const val = Math.floor(start + (target - start) * (1 - Math.pow(1 - p, 3)));
+    el.textContent = String(val);
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
 }
 
-// Guard page example (optional)
-function requireAuth(){
-  const ok = localStorage.getItem("demo_auth") === "true";
-  const box = document.querySelector("#authBox");
-  if(!box) return;
-
-  if(ok){
-    box.className = "alert ok";
-    box.textContent = "Authenticated session detected (demo).";
-  } else {
-    box.className = "alert err";
-    box.textContent = "Not authenticated. Use qa@test.com / Password123 on the Login demo.";
+const counters = document.querySelectorAll("[data-count]");
+const cio = new IntersectionObserver((entries) => {
+  for (const e of entries) {
+    if (e.isIntersecting) {
+      animateCount(e.target);
+      cio.unobserve(e.target);
+    }
   }
+}, { threshold: 0.6 });
+counters.forEach(el => cio.observe(el));
+
+// Back to top
+const btt = document.getElementById("backToTop");
+if (btt) {
+  window.addEventListener("scroll", () => {
+    btt.classList.toggle("show", window.scrollY > 500);
+  });
+  btt.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 }
