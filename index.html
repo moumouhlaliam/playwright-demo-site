@@ -1,44 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Playwright Demo Site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css?v=777" />
-</head>
-<body>
+<header class="hero reveal">
+  <div class="hero__content">
+    <p class="pill">Playwright • Docker • GitHub Actions</p>
+    <h1>Playwright + Docker E2E Portfolio</h1>
+    <p class="lead">
+      Public demo web app hosted on GitHub Pages, tested end-to-end with Playwright.
+    </p>
 
-  <header class="site-header">
-    <div class="top-bar">
-      <div class="brand">
-        <img src="assets/images/playwright.png" alt="Playwright logo">
-        <img src="assets/images/docker.png" alt="Docker logo">
-        <div class="brand-title">
-          <strong>Playwright Demo Site</strong>
-          <span>E2E practice</span>
-        </div>
-      </div>
+    <div class="hero__actions">
+      <a class="btn" href="projects.html">See projects</a>
+      <a class="btn btn--ghost" href="demo-form.html">Open demo</a>
+      <button class="btn btn--icon" id="themeToggle" aria-label="Toggle theme">🌓</button>
     </div>
 
-    <nav class="navbar">
-      <a class="active" href="index.html">Home</a>
-      <a href="demo-login.html">Demo Login</a>
-      <a href="demo-form.html">Demo Form</a>
-      <a href="project.html">Project</a>
-    </nav>
-  </header>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat__num" data-count="18">0</div>
+        <div class="stat__label">Tests</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num" data-count="3">0</div>
+        <div class="stat__label">Flows</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num" data-count="1">0</div>
+        <div class="stat__label">CI Pipeline</div>
+      </div>
+    </div>
+  </div>
+</header>
 
-  <main>
-    <section class="card">
-      <h1>Welcome</h1>
-      <p>Use these pages to practice Playwright E2E automation.</p>
-      <a class="btn" href="demo-login.html">Go to Demo Login</a>
-    </section>
-  </main>
+<section class="grid reveal">
+  <article class="card">
+    <h3>✅ Demo App</h3>
+    <p>Login flow + form validation + UI assertions.</p>
+    <a class="link" href="demo-login.html">Try login →</a>
+  </article>
 
-  <footer class="site-footer">
-    E2E Playwright
-  </footer>
+  <article class="card">
+    <h3>📄 Test Evidence</h3>
+    <p>Link your latest Playwright HTML report (CI published).</p>
+    <a class="link" href="report/">Open report →</a>
+  </article>
 
-</body>
-</html>
+  <article class="card">
+    <h3>🧰 Skills</h3>
+    <p>Selectors, assertions, POM, Dockerized runs, CI pipelines.</p>
+    <a class="link" href="about.html">About →</a>
+  </article>
+</section>
+<link rel="stylesheet" href="style.css" />
+<script defer src="app.js"></script>
+
+<button id="backToTop" class="backtotop" aria-label="Back to top">↑</button>
