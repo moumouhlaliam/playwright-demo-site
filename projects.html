@@ -1,11 +1,10 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Projects</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>Projects • Moumouh QA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
   <script defer src="app.js"></script>
 </head>
 <body>
@@ -13,44 +12,67 @@
 <header class="site-header">
   <nav class="nav">
     <a class="brand" href="index.html">Moumouh QA</a>
-    <button class="nav-toggle" id="navToggle">☰</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="index.html" data-nav>Home</a>
       <a href="project.html" data-nav>Projects</a>
       <a href="tools.html" data-nav>Tools</a>
       <a href="about.html" data-nav>About</a>
-      <button class="icon-btn" id="themeToggle">🌓</button>
+      <a href="demo-login.html" class="pill-link">Demo Login</a>
+      <a href="demo-form.html" class="pill-link">Demo Form</a>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">🌓</button>
     </div>
   </nav>
 </header>
 
 <main class="section">
   <div class="container">
-    <h1 class="reveal">Projects</h1>
-
-    <div class="grid">
-      <div class="card reveal">
-        <h3>Login Flow</h3>
-        <p>Valid / invalid login scenarios.</p>
-        <a class="link" href="demo-login.html">Open</a>
-      </div>
-      <div class="card reveal">
-        <h3>Form Flow</h3>
-        <p>Field validation and submit.</p>
-        <a class="link" href="demo-form.html">Open</a>
-      </div>
+    <div class="panel reveal">
+      <span class="kicker">📌 Projects</span>
+      <h1>Demo flows</h1>
+      <p class="lead">Each page is designed to be test-friendly and visually modern.</p>
     </div>
+
+    <section class="section">
+      <div class="grid">
+        <article class="card reveal">
+          <h3>Login Flow</h3>
+          <p>Valid / invalid / empty fields scenarios.</p>
+          <a class="link" href="demo-login.html">Open demo →</a>
+        </article>
+
+        <article class="card reveal">
+          <h3>Form Flow</h3>
+          <p>Validation rules and success confirmation message.</p>
+          <a class="link" href="demo-form.html">Open demo →</a>
+        </article>
+
+        <article class="card reveal">
+          <h3>Automation Repo</h3>
+          <p>View the source code and Playwright tests on GitHub.</p>
+          <a class="link" href="https://github.com/moumouhlaliam" target="_blank" rel="noreferrer">Open GitHub →</a>
+        </article>
+      </div>
+    </section>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-title">Projects</div>
+    <div>
+      <div class="footer-title">Projects</div>
+      <div class="footer-sub">Playwright Demo Portfolio</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+    </div>
   </div>
 </footer>
 
-<button id="backToTop" class="backtotop">↑</button>
-<div id="toast" class="toast"></div>
+<button id="backToTop" class="backtotop" aria-label="Back to top">↑</button>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 </body>
 </html>
